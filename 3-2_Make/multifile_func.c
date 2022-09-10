@@ -14,6 +14,4 @@ void print_the_time(void)
     time(&current_time);
 
     printf("Right now it is: %s", ctime(&current_time));
-    
-    return;
 }
