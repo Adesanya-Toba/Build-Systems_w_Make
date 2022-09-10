@@ -10,7 +10,10 @@ all: multifile_program static_lib shared_lib
 
 multifile_program: multifile_main.c multifile_func.c
 	# Building multifile_program
-	cc multifile_main.c multifile_func.c -o multifile_program
+# Using automatic variables
+# $^ corresponds to all the prerequisites with file extensions with spaces between them
+# $@ corresponds to the target for the given rule
+	cc $^ -o $@
 
 static_lib:
 	cc -c multifile_func.c -o multifile_func.o
