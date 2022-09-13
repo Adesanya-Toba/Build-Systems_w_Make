@@ -17,9 +17,9 @@ jobs:
       run: ls
     - name: Change dir
       run: cd 3-2_Make/
-      run: ls
+    - run: ls
     - name: make
       run: make
-      run: make all
+    - run: make all
     - name: clean
       run: make clean
