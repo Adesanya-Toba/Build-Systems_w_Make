@@ -31,8 +31,8 @@ static_lib: $(MULTIFILE_OBJ)
 	# GENERATING STATIC OBJECTS
 	$(AR) $(SHARED_LIBFLAGS) lib$(MULITFUNC).a $(MULTIFILE_OBJ)
 
-shared_lib: $(MULTIFILE_OBJ)
-	$(CC) -$(STATIC_LIBFLAGS) -c $^ -o $(MULITFUNC)_pic.o
+shared_lib:
+	$(CC) -$(STATIC_LIBFLAGS) -c $(MULITFUNC).c -o $(MULITFUNC)_pic.o
 	$(CC) -$(SHARED) $(MULITFUNC)_pic.o -o libmultifile_func_dyn.so
 
 # Creating a phony target
